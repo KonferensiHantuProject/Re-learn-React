@@ -1,0 +1,10 @@
+JSX -> ekstensi sintaks untuk JS yang bisa mendeskripsikan UI seperti HTML
+
+3 Aturan JSX:
+- Selalu mengembalikan satu elemen
+- Selalu tutup semua tag
+- CamelCase untuk atribut
+
+State, adalah data yang berubah seiriang berjalannya waktu
+
+Serangkaian Function = Hooks

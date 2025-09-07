@@ -35,7 +35,13 @@
 
             // Array
             const siswa = ['John', 'Damn', 'Rahman'];
+            const [likes, setLikes] = React.useState(0);
 
+
+            // Untuk klik
+            function handleClick(){
+                setLikes(likes + 1);
+            }
             return(
 
                 <>
@@ -44,12 +50,12 @@
                     <ul>
                         {
                             siswa.map((sis) => (
-                                <>
-                                    <li key={sis}>{sis}</li>
-                                </>
+                                <li key={sis}>{sis}</li>
                             ))
                         }
                     </ul>
+
+                    <button onClick={handleClick}>Like ({likes})</button>
                 </>
             )
 

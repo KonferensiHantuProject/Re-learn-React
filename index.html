@@ -21,16 +21,29 @@
         const root = ReactDOM.createRoot(container);
 
         // Header Component
-        function Header(){
+        function Header(props){
             return(
                 <>
-                    <h1>Belajar React Dulu 🚀</h1>
+                    <h1>Belajar React Dulu {props.nama} 🚀</h1>
                     <p onClick={e => {alert('Mantap')}}>Seru Mencoba React</p>
                 </>    
             );
         }
 
-        root.render(<Header />);
+        // Nested Component
+        function HomePage(){
+            return(
+
+                <>
+                    <Header nama="Sanak" />
+                    <Header nama="John" />
+                </>
+            )
+
+        }
+
+        // Calling Home Page
+        root.render(<HomePage />);
 
      </script>
 </body>

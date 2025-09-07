@@ -32,11 +32,24 @@
 
         // Nested Component
         function HomePage(){
+
+            // Array
+            const siswa = ['John', 'Damn', 'Rahman'];
+
             return(
 
                 <>
                     <Header nama="Sanak" />
-                    <Header nama="John" />
+
+                    <ul>
+                        {
+                            siswa.map((sis) => (
+                                <>
+                                    <li key={sis}>{sis}</li>
+                                </>
+                            ))
+                        }
+                    </ul>
                 </>
             )
 

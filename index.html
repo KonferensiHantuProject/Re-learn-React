@@ -21,16 +21,48 @@
         const root = ReactDOM.createRoot(container);
 
         // Header Component
-        function Header(){
+        function Header({nama}){
             return(
                 <>
-                    <h1>Belajar React Dulu 🚀</h1>
+                    <h1>Belajar React Dulu {nama ? nama : "Pos"} 🚀</h1>
                     <p onClick={e => {alert('Mantap')}}>Seru Mencoba React</p>
                 </>    
             );
         }
 
-        root.render(<Header />);
+        // Nested Component
+        function HomePage(){
+
+            // Array
+            const siswa = ['John', 'Damn', 'Rahman'];
+            const [likes, setLikes] = React.useState(0);
+
+
+            // Untuk klik
+            function handleClick(){
+                setLikes(likes + 1);
+            }
+            return(
+
+                <>
+                    <Header nama="Sanak" />
+
+                    <ul>
+                        {
+                            siswa.map((sis) => (
+                                <li key={sis}>{sis}</li>
+                            ))
+                        }
+                    </ul>
+
+                    <button onClick={handleClick}>Like ({likes})</button>
+                </>
+            )
+
+        }
+
+        // Calling Home Page
+        root.render(<HomePage />);
 
      </script>
 </body>
